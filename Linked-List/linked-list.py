@@ -49,7 +49,7 @@ class LinkedList:
         self.length -= 1
         return temp.value
 
-    def prepend(self, value): # add an element to first of the linkedlist
+    def prepend(self, value): # add an element to the first of the linkedlist
         new_node = Node(value)
         if self.length == 0:
             self.head = new_node
