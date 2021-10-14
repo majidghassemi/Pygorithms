@@ -118,3 +118,23 @@ class DoublyLinkedList: # Create our DLL constructor and initalize it
         after.prev = new_node
         self.length += 1
         return True
+
+
+    def remove(self, index): # Remove an element with the given index
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        elif index == self.length - 1:
+            return self.pop()
+        before = self.get(index - 1)
+        temp = before.next
+        after = self.get(index + 1)
+        before.next = after.prev
+        after.prev = before.next
+        temp.next = None
+        temp.prev = None
+        self.length -= 1
+        return temp
+
+        
