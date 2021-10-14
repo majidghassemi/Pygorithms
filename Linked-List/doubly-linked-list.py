@@ -53,15 +53,14 @@ class DoublyLinkedList: # Create our DLL constructor and initalize it
     def pop_first(self): # Pop an element from the beginning of DLL
         if self.length == 0:
             return None
-        elif self.length == 1:
-            element = self.head
-            self.head = None
-            self.length = 0
-            return element
         temp = self.head
-        self.head = self.head.next
-        self.head.next.prev = None
-        temp.next = None
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = self.head.next
+            self.head.prev = None
+            temp.next = None
         self.length -= 1
         return temp
 
