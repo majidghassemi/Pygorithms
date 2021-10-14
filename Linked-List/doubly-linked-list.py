@@ -48,6 +48,23 @@ class DoublyLinkedList: # Create our DLL constructor and initalize it
             temp.prev = None
         self.length -= 1
         return temp
+    
+
+    def pop_first(self): # Pop an element from the beginning of DLL
+        if self.length == 0:
+            return None
+        elif self.length == 1:
+            element = self.head
+            self.head = None
+            self.length = 0
+            return element
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        self.length -= 1
+        return temp
+
+
 
     def prepend(self, value): # add an element to the first of the DLL
         new_node = Node(value)
@@ -100,6 +117,3 @@ class DoublyLinkedList: # Create our DLL constructor and initalize it
         after.prev = new_node
         self.length += 1
         return True
-        
-
-    
