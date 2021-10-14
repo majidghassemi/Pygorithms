@@ -60,6 +60,7 @@ class DoublyLinkedList: # Create our DLL constructor and initalize it
             return element
         temp = self.head
         self.head = self.head.next
+        self.head.next.prev = None
         temp.next = None
         self.length -= 1
         return temp
