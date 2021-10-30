@@ -1,4 +1,4 @@
-# Creating a Node class in order to use it in our linked-list
+# Creating a Node class in order to use it in our Stack
 class Node:
     """A class to create each node"""
 
